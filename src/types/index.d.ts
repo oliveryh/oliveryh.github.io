@@ -34,7 +34,6 @@ export type SiteConfig = {
   url: string;
   ogImage: string;
   links: {
-    twitter: string;
     github: string;
   };
 };
@@ -49,8 +48,6 @@ export type MarketingConfig = {
 };
 
 export type NavMenuConfig = {
-  infosNav: SidebarNavItem[];
-  examplesNav: SidebarNavItem[];
   links: MenuItem[];
 };
 
