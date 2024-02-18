@@ -34,21 +34,11 @@ const { title, description, mainClass } = Astro.props;
     <SheetMobileNav
       mainNavItems={[...navMenuConfig.links]}
       sidebarNavItems={[
-        ...navMenuConfig.infosNav,
-        ...navMenuConfig.examplesNav,
       ]}
       slot="mobile-nav-header"
       client:load
     />
 
-    <nav slot="right-header">
-      <a
-        href="/login"
-        class={cn(buttonVariants({ variant: "outline", size: "sm" }), "px-4")}
-      >
-        Login
-      </a>
-    </nav>
   </Header>
 
   <main class={cn(mainClass)}>
