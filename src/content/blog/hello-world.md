@@ -2,7 +2,7 @@
 title: "A new blog in Astro"
 description: "Migrating from hugo to astro."
 pubDate: "Feb 18 2024"
-coverImage: "/blog-placeholder-3.jpg"
+coverImage: "/hello-world.svg"
 category: "writing"
 ---
 
