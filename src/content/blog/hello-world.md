@@ -12,11 +12,11 @@ One article in particular titled [Cool Things People Do With Their Blogs](https:
 
 In particular, the blogs that caught my interest was [Henrique Dias](https://hacdias.com/) where he catalogued things in his everyday that existed beyond the computer, like his photography and trips.
 
-![Henrique Dias' Photography](./media/hello-world-02.png)
+![Henrique Dias' Photography](/blog-images/hello-world-02.png)
 
 But also [Aaron Parecki](https://aaronparecki.com/) who might be one of the few people whose sleep schedules are publicly available.
 
-![Aaron Parecki's Sleep Stats](./media/hello-world-01.png)
+![Aaron Parecki's Sleep Stats](/blog-images/hello-world-01.png)
 
 I was committed to the [Astro cactus theme](https://astro.build/themes/details/astro-cactus/) after reading [George Spanos' Blog](https://gspanos.tech/), but decided that the monospace layout would be another design choice that could stifle future creativity. [Chris Nicholas's](https://chrisnicholas.dev) new blog's simplicity and my ongoing obsession with [shadcn UI](https://ui.shadcn.com/) landed me here with the [Astro-nomy](https://github.com/mickasmt/astro-nomy) project.
 
