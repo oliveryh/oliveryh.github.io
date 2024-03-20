@@ -62,7 +62,9 @@ const { title, description, pubDate, updatedDate, coverImage, category } =
       <h1 class="font-heading text-4xl my-4" transition:name={"title-" + slug}>
         {title}
       </h1>
-      <p>{description}</p>
+      <p transition:name={"description-" + slug}>
+        {description}
+      </p>
       <hr class="my-6" />
       <slot />
     </article>
