@@ -6,9 +6,10 @@ export const navMenuConfig: NavMenuConfig = {
       title: "Blog",
       href: "/blog",
     },
-    {
-      title: "About",
-      href: "/about",
-    },
+    // Hide the About page for now
+    // {
+    //   title: "About",
+    //   href: "/about",
+    // },
   ],
 };
