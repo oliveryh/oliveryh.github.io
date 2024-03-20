@@ -1,5 +1,4 @@
 ---
-import Footer from "@/components/layout/footer.astro";
 import Header from "@/components/layout/header.astro";
 import { MainNavigationMenu } from "@/components/main-navigation-menu";
 import { buttonVariants } from "@/components/ui/button";
@@ -42,6 +41,4 @@ const { title, description, mainClass } = Astro.props;
   <main class={cn("flex-grow", mainClass)}>
     <slot />
   </main>
-
-  <Footer />
 </BaseLayout>
