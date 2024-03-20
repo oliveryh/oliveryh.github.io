@@ -33,15 +33,13 @@ const { title, description, mainClass } = Astro.props;
     <MainNavigationMenu slot="left-header" client:load />
     <SheetMobileNav
       mainNavItems={[...navMenuConfig.links]}
-      sidebarNavItems={[
-      ]}
+      sidebarNavItems={[]}
       slot="mobile-nav-header"
       client:load
     />
-
   </Header>
 
-  <main class={cn(mainClass)}>
+  <main class={cn("flex-grow", mainClass)}>
     <slot />
   </main>
 

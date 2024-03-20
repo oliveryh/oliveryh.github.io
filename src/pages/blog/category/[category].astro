@@ -26,7 +26,7 @@ const posts = await getPostsByCategory(category);
 ---
 
 <MainLayout title={`${capitalizer(category)} | Blog`} description={`All posts for ${category} category`}>
-  <section class="container py-10">
+  <section class="container py-10 max-w-screen-md">
     <BlogHeader title={`Posts by ${category} category`} />
 
     <div
