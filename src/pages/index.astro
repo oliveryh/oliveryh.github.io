@@ -1,44 +1,85 @@
 ---
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import MainLayout from "@/layouts/main-layout.astro";
-import { cn } from "@/lib/utils";
-import Icon from "astro-icon";
+import BlogCard from '@/components/BlogCard.astro'
+import Link from '@/components/Link.astro'
+import PageHead from '@/components/PageHead.astro'
+import { buttonVariants } from '@/components/ui/button'
+import { SITE } from '@/consts'
+import Layout from '@/layouts/Layout.astro'
+import { getRecentPosts } from '@/lib/data-utils'
+
+const blog = await getRecentPosts(SITE.featuredPostCount)
 ---
 
-<MainLayout title="Oliveryh's Blog">
-  <section class="space-y-6 pb-12 pt-16 lg:py-28">
-    <div
-      class="container flex max-w-[64rem] flex-col items-center gap-5 text-center"
-    >
-      <h1
-        class="font-heading text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl !leading-[1.1] text-balance"
-      >
-        A modern blog using
-        <span class="text-gradient_indigo-purple">
-          Astro v4 <span class="font-sans font-bold">+</span> shadcn<span
-            class="font-sans font-bold">/</span
-          >ui.
-        </span>
-      </h1>
-
-      <p
-        class="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-balance"
-      >
-        A place to share my thoughts.
+<Layout class="max-w-3xl">
+  <PageHead slot="head" title="Home" />
+  <section class="rounded-lg border">
+    <div class="flex flex-col space-y-1.5 p-6">
+      <h3 class="text-3xl leading-none font-medium">er·u·dite</h3>
+      <p class="text-muted-foreground text-sm">
+        /ˈer(y)əˌdīt/ &bull; <span class="font-medium">adjective</span>
       </p>
-
-      <div class="flex justify-center space-x-2 md:space-x-4">
-        <a
-          href={siteConfig.links.github}
-          target="_blank"
-          rel="noreferrer"
-          class={cn(buttonVariants({ variant: "outline", size: "lg" }), "px-4")}
-        >
-          <Icon name="github" class="mr-2 size-5" />
-          Github
-        </a>
-      </div>
+    </div>
+    <div class="p-6 pt-0">
+      <p class="text-muted-foreground mb-2 text-sm">
+        astro-erudite is an opinionated, unstyled static blogging template built
+        with <Link
+          href="https://astro.build"
+          class="text-foreground"
+          external
+          underline>Astro</Link
+        >, <Link
+          href="https://tailwindcss.com"
+          class="text-foreground"
+          external
+          underline>Tailwind</Link
+        >, and <Link
+          href="https://ui.shadcn.com"
+          class="text-foreground"
+          external
+          underline>shadcn/ui</Link
+        >. Extraordinarily loosely based on the <Link
+          href="https://astro-micro.vercel.app/"
+          class="text-foreground"
+          external
+          underline>Astro Micro</Link
+        > theme.
+      </p>
+      <p class="text-muted-foreground text-sm">
+        To use this template, check out the <Link
+          href="https://github.com/jktrn/astro-erudite"
+          class="text-foreground"
+          underline
+          external>GitHub</Link
+        > repository. To learn more about why this template exists, read this blog
+        post: <Link
+          href="/blog/the-state-of-static-blogs"
+          class="text-foreground"
+          underline>The State of Static Blogs in 2024</Link
+        >.
+      </p>
     </div>
   </section>
-</MainLayout>
+  <section class="flex flex-col gap-y-4">
+    <h2 class="text-2xl font-medium">Latest posts</h2>
+    <ul class="flex flex-col gap-y-4">
+      {
+        blog.map((post) => (
+          <li>
+            <BlogCard entry={post} />
+          </li>
+        ))
+      }
+    </ul>
+    <div class="flex justify-center">
+      <Link
+        href="/blog"
+        class={buttonVariants({ variant: 'ghost' }) + ' group'}
+      >
+        See all posts <span
+          class="ml-1.5 transition-transform group-hover:translate-x-1"
+          >&rarr;</span
+        >
+      </Link>
+    </div>
+  </section>
+</Layout>
